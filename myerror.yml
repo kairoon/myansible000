@@ -1,0 +1,16 @@
+---
+- hosts: 172.31.41.100
+  become: yes
+  tasks:
+  - name: install git
+    apt:
+      name: git
+      state: present
+  - name: install apache2
+    apt:
+      name: apache22
+      state: present
+  - name: install wget
+    apt:
+      name: wget
+      state: present
