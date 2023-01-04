@@ -2,23 +2,23 @@
 - hosts: mygroup
   become: yes
   tasks:
-  - name: install wget
-    apt:
-      name: wget
-      state: present
-  - name: i want install apache on ubuntu
+  - name: i want install apache on ubuntu node
     apt: 
       name: apache2
       state: present
-  - name: i want start webserver on ubuntu
+    when: ansible_os_family=="Debian"
+  - name: i want start webserver on ubuntu node
     service:
       name: http
       state: started
-  - name: i want install apache on amazon
+    when: ansible_os_family=="Debian"
+  - name: i want install apache on redhat node
     yum:
-      name: apache2
+      name: httpd
       state: present
-  - name: iwant start webserver on amazon
+    when: ansible_os_family=="RedHat"
+  - name: iwant start webserver on amazon node
     service:
       name: httpd
       state: started
+    when: ansible_os_family=="RedHat"
