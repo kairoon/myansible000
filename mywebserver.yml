@@ -9,7 +9,7 @@
     when: ansible_os_family=="Debian"
   - name: i want start webserver on ubuntu node
     service:
-      name: http
+      name: apache2
       state: started
     when: ansible_os_family=="Debian"
   - name: i want install apache on redhat node
