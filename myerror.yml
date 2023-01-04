@@ -10,6 +10,7 @@
     apt:
       name: apache22
       state: present
+    ignore_errors: true
   - name: install wget
     apt:
       name: wget
