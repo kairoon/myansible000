@@ -1,8 +1,24 @@
 ---
-- hosts: all
+- hosts: mygroup
   become: yes
   tasks:
   - name: install wget
     apt:
       name: wget
       state: present
+  - name: i want install apache on ubuntu
+    apt: 
+      name: apache2
+      state: present
+  - name: i want start webserver on ubuntu
+    service:
+      name: http
+      state: started
+  - name: i want install apache on amazon
+    yum:
+      name: apache2
+      state: present
+  - name: iwant start webserver on amazon
+    service:
+      name: httpd
+      state: started
