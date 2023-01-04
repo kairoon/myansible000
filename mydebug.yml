@@ -8,3 +8,13 @@
   - name: i want to display my first task results
     debug:
       msg: "{{myresult}}"
+  - name: install git
+    apt:
+      name: git
+      state: present
+    when: myresult.stderr!=" "
+  - name: install apache2
+    apt:
+      name: apache2
+      state: present
+    when: myresult.stderr==" "
