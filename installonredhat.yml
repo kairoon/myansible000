@@ -1,0 +1,9 @@
+---
+- hosts: 172.31.33.185
+  become: yes
+  tasks:
+  - name: install java on redhat node
+    yum:
+      name: "{{myjavaredhatvar}}"
+      state: present
+    when: ansible_os_family=="RedHat"
