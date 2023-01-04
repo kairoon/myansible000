@@ -9,3 +9,7 @@
 [mygroup]
    172.31.47.177
    172.31.33.185
+
+[mygroup:vars]
+   myubuntuvar=apache2
+   myredhatvar=httpd
