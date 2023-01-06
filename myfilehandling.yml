@@ -15,3 +15,9 @@
     template:  
       src: myindex.j2
       dest: /var/www/html/index.html
+  - name: download files from internet 
+    ansible.builtin.get_url:
+      url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
+      dest: /home/ubuntu/jenkins.war
+    force_basic_auth: yes
+    
