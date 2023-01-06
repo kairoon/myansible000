@@ -1,0 +1,18 @@
+---
+- hosts: 172.31.38.173
+  become: yes
+  tasks:
+  - name: create ansible nodes
+    ec2:
+      key_name: mykey
+      instance_type: t2.micro
+      image_id: ami-04fa64c4b38e36384
+      wait: yes
+      region: us-east-2
+      group: sgr-0d253776f25868332
+      count: 2
+      vpc_subnet_id: subnet-066dfdbc79abb2223
+      assign_public_ip: yes
+      instance_tags:
+        Name: ANSIBLENODES
+        
