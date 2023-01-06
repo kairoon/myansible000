@@ -22,8 +22,8 @@
     service:
       name: apache2
       state: restarted 
-  - name: install git
+  - name: install tree
     apt: 
-      name: git
+      name: tree
       state: present
     notify: restartwebserver
