@@ -1,4 +1,5 @@
 ---
 - name: creaet a file
-  file: /home/ubuntu/myfile.yml
-  state: touch
+  file: 
+    path: /home/ubuntu/myfile.yml
+    state: touch
