@@ -11,6 +11,7 @@
     copy:
       src: staticfile.txt
       dest: /home/ubuntu/mystaticfile.txt
+    ignore_errors: true
   - name: download files from internet 
     ansible.builtin.get_url:
       url: https://pkg.jenkins.io/debian-stable/jenkins.io.key
